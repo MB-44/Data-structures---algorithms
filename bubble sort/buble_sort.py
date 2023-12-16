@@ -10,9 +10,15 @@ class BubleSort:
     
     def sort(self, array):
         for i in range(len(array)):
-            for j in range(1, len(array)):
+            isSorted = True
+            for j in range(1, len(array)-i):
                 if array[j] < array[j - 1]:
                     self.swap(array, j, j - 1)
+                    isSorted = False
+
+            if isSorted:
+                return
+
 
 
 if __name__ == "__main__":
